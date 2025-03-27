@@ -20,7 +20,7 @@ class SauceController extends Controller
         return view('sauces.create');
     }
 
-    // Stocke une nouvelle sauce en base
+    // Stock une nouvelle sauce en base
     public function store(Request $request)
     {
         $request->validate([
@@ -42,19 +42,19 @@ class SauceController extends Controller
         return redirect()->route('sauces.index')->with('success', 'Sauce ajoutée !');
     }
 
-    // Affiche une sauce spécifique
+    // Affichage d'une sauce spécifique
     public function show(Sauce $sauce)
     {
         return view('sauces.show', compact('sauce'));
     }
 
-    // Affiche le formulaire d'édition d'une sauce
+    // Affichage du formulaire d'édition d'une sauce
     public function edit(Sauce $sauce)
     {
         return view('sauces.edit', compact('sauce'));
     }
 
-    // Met à jour une sauce
+    // Mise à jour d'une sauce
     public function update(Request $request, Sauce $sauce)
     {
         $request->validate([
@@ -78,7 +78,7 @@ class SauceController extends Controller
         return redirect()->route('sauces.index')->with('success', 'Sauce mise à jour !');
     }
 
-    // Supprime une sauce
+    // Suppression d'une sauce
     public function destroy(Sauce $sauce)
     {
         $sauce->delete();
